@@ -1,0 +1,24 @@
+nav:
+  # Navigation bar logo image
+  logo: https://youke1.picui.cn/s1/2025/07/26/6884223aaaa94.jpg
+  display_title: true
+  display_post_title: true
+
+  # Whether to fix navigation bar
+  fixed: false
+
+avatar:
+  img: https://youke1.picui.cn/s1/2025/07/25/6883924f01663.jpg
+  effect: true 
+
+# dark mode
+darkmode:
+  enable: true
+  # dark mode和 light mode切換按鈕
+  button: true
+  autoChangeMode: false
+  # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
+  start: # 8
+  end: # 22
+
+
