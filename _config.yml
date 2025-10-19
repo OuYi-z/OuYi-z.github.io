@@ -103,6 +103,6 @@ theme: jelly
 
 ​      type: git
 ​      repo: git@github.com:OuYi-z/OuYi-z.github.io.git
-​      branch: mastertype: git
+​      branch: master
 
   
