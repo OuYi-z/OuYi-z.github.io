@@ -100,6 +100,9 @@ theme: jelly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment  deploy:
-    type: git
-    repo: git@github.com:OuYi-z/OuYi-z.github.io.git
-    branch: master
+
+​      type: git
+​      repo: git@github.com:OuYi-z/OuYi-z.github.io.git
+​      branch: mastertype: git
+
+  
