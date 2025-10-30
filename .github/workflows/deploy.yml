@@ -1,43 +1,37 @@
+
+
 name: Deploy Hexo to GitHub Pages
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout
       uses: actions/checkout@v4
       with:
         submodules: true
-        
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-        
-    - name: Install Hexo CLI
-      run: |
-        npm install -g hexo-cli
-        
-    - name: Install dependencies
-      run: |
-        npm install
-        
-    - name: Generate static files
-      run: |
-        hexo clean
-        hexo generate
-        
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: main
+
+- name: Setup Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: '20'
+    cache: 'npm'
+
+- name: Install and Build
+  run: |
+    npm install -g hexo-cli
+    npm install
+    hexo clean
+    hexo generate
+
+- name: Deploy
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}  # 使用专门配置的部署密钥
+    external_repository: OuYi-z/OuYi-z.github.io  # 填写你的Pages仓库，例如 OuYi-z/OuYi-z.github.io
+    publish_dir: ./public
+    publish_branch: master  # 个人网站仓库通常使用master或main分支[citation:5]
